@@ -1,0 +1,2 @@
+Dave_Haique/urdf/robots/glider_description
+/home/popi/Haique_Sim/devel/.private/glider_description/cmake.lock /home/popi/Haique_Sim/devel/./cmake.lock

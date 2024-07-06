@@ -1,0 +1,8 @@
+uuv_simulator/uuv_teleop
+/home/popi/Haique_Sim/devel/.private/uuv_teleop/cmake.lock /home/popi/Haique_Sim/devel/./cmake.lock
+/home/popi/Haique_Sim/devel/.private/uuv_teleop/lib/uuv_teleop/finned_uuv_teleop.py /home/popi/Haique_Sim/devel/lib/uuv_teleop/finned_uuv_teleop.py
+/home/popi/Haique_Sim/devel/.private/uuv_teleop/lib/uuv_teleop/vehicle_teleop.py /home/popi/Haique_Sim/devel/lib/uuv_teleop/vehicle_teleop.py
+/home/popi/Haique_Sim/devel/.private/uuv_teleop/lib/uuv_teleop/cmake.lock /home/popi/Haique_Sim/devel/lib/uuv_teleop/cmake.lock
+/home/popi/Haique_Sim/devel/.private/uuv_teleop/lib/pkgconfig/uuv_teleop.pc /home/popi/Haique_Sim/devel/lib/pkgconfig/uuv_teleop.pc
+/home/popi/Haique_Sim/devel/.private/uuv_teleop/share/uuv_teleop/cmake/uuv_teleopConfig-version.cmake /home/popi/Haique_Sim/devel/share/uuv_teleop/cmake/uuv_teleopConfig-version.cmake
+/home/popi/Haique_Sim/devel/.private/uuv_teleop/share/uuv_teleop/cmake/uuv_teleopConfig.cmake /home/popi/Haique_Sim/devel/share/uuv_teleop/cmake/uuv_teleopConfig.cmake

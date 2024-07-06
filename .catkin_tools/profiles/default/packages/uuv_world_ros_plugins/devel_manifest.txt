@@ -1,0 +1,7 @@
+uuv_simulator/uuv_world_plugins/uuv_world_ros_plugins
+/home/popi/Haique_Sim/devel/.private/uuv_world_ros_plugins/cmake.lock /home/popi/Haique_Sim/devel/./cmake.lock
+/home/popi/Haique_Sim/devel/.private/uuv_world_ros_plugins/lib/libuuv_sc_ros_interface_plugin.so /home/popi/Haique_Sim/devel/lib/libuuv_sc_ros_interface_plugin.so
+/home/popi/Haique_Sim/devel/.private/uuv_world_ros_plugins/lib/libuuv_underwater_current_ros_plugin.so /home/popi/Haique_Sim/devel/lib/libuuv_underwater_current_ros_plugin.so
+/home/popi/Haique_Sim/devel/.private/uuv_world_ros_plugins/lib/pkgconfig/uuv_world_ros_plugins.pc /home/popi/Haique_Sim/devel/lib/pkgconfig/uuv_world_ros_plugins.pc
+/home/popi/Haique_Sim/devel/.private/uuv_world_ros_plugins/share/uuv_world_ros_plugins/cmake/uuv_world_ros_pluginsConfig-version.cmake /home/popi/Haique_Sim/devel/share/uuv_world_ros_plugins/cmake/uuv_world_ros_pluginsConfig-version.cmake
+/home/popi/Haique_Sim/devel/.private/uuv_world_ros_plugins/share/uuv_world_ros_plugins/cmake/uuv_world_ros_pluginsConfig.cmake /home/popi/Haique_Sim/devel/share/uuv_world_ros_plugins/cmake/uuv_world_ros_pluginsConfig.cmake

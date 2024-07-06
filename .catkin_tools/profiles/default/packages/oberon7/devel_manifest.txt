@@ -1,0 +1,2 @@
+uuv_manipulators/oberon7/oberon7
+/home/popi/Haique_Sim/devel/.private/oberon7/cmake.lock /home/popi/Haique_Sim/devel/./cmake.lock

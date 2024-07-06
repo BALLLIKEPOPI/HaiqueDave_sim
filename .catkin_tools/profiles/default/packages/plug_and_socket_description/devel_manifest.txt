@@ -1,0 +1,5 @@
+Dave_Haique/urdf/manipulators/plug_and_socket_description
+/home/popi/Haique_Sim/devel/.private/plug_and_socket_description/cmake.lock /home/popi/Haique_Sim/devel/./cmake.lock
+/home/popi/Haique_Sim/devel/.private/plug_and_socket_description/lib/pkgconfig/plug_and_socket_description.pc /home/popi/Haique_Sim/devel/lib/pkgconfig/plug_and_socket_description.pc
+/home/popi/Haique_Sim/devel/.private/plug_and_socket_description/share/plug_and_socket_description/cmake/plug_and_socket_descriptionConfig-version.cmake /home/popi/Haique_Sim/devel/share/plug_and_socket_description/cmake/plug_and_socket_descriptionConfig-version.cmake
+/home/popi/Haique_Sim/devel/.private/plug_and_socket_description/share/plug_and_socket_description/cmake/plug_and_socket_descriptionConfig.cmake /home/popi/Haique_Sim/devel/share/plug_and_socket_description/cmake/plug_and_socket_descriptionConfig.cmake

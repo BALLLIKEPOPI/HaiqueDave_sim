@@ -1,0 +1,5 @@
+Dave_Haique/gazebo/dave_gazebo_visual_plugins
+/home/popi/Haique_Sim/devel/.private/dave_gazebo_visual_plugins/cmake.lock /home/popi/Haique_Sim/devel/./cmake.lock
+/home/popi/Haique_Sim/devel/.private/dave_gazebo_visual_plugins/lib/pkgconfig/dave_gazebo_visual_plugins.pc /home/popi/Haique_Sim/devel/lib/pkgconfig/dave_gazebo_visual_plugins.pc
+/home/popi/Haique_Sim/devel/.private/dave_gazebo_visual_plugins/share/dave_gazebo_visual_plugins/cmake/dave_gazebo_visual_pluginsConfig-version.cmake /home/popi/Haique_Sim/devel/share/dave_gazebo_visual_plugins/cmake/dave_gazebo_visual_pluginsConfig-version.cmake
+/home/popi/Haique_Sim/devel/.private/dave_gazebo_visual_plugins/share/dave_gazebo_visual_plugins/cmake/dave_gazebo_visual_pluginsConfig.cmake /home/popi/Haique_Sim/devel/share/dave_gazebo_visual_plugins/cmake/dave_gazebo_visual_pluginsConfig.cmake
