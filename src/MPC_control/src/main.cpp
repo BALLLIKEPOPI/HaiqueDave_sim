@@ -3,15 +3,16 @@
 #include<iostream>
 #include<vector>
 #include <casadi/casadi.hpp>
-#include "mpc_ctl.h"
+#include "../include/mpc_ctl.h"
 #include "ros/publisher.h"
 #include "ros/ros.h"
 #include "ros/service_client.h"
 #include "ros/subscriber.h"
-#include <mavros_msgs/CommandBool.h>
-#include <mavros_msgs/SetMode.h>
+// for realfly
+// #include <mavros_msgs/CommandBool.h>
+// #include <mavros_msgs/SetMode.h>
+// #include <mavros_msgs/State.h>
 #include <geometry_msgs/PoseStamped.h>
-#include <mavros_msgs/State.h>
 
 #include <gazebo_msgs/ModelStates.h>
 #include <geometry_msgs/Pose.h>
@@ -22,7 +23,8 @@
 using namespace std;
 using namespace casadi;
 
-mavros_msgs::State current_state;
+// for realfly
+// mavros_msgs::State current_state;
 ros::Publisher odometry_pub;
 MPC_CTL MPC_Ctl;
 
@@ -76,9 +78,10 @@ void local_pose_cb(const gazebo_msgs::ModelStates::ConstPtr& msg){
                         x_, y_, z_, v_x, v_y, v_z);
 }
 
-void state_cb(const mavros_msgs::State::ConstPtr& msg){
-    current_state = *msg;
-}
+//for realfly
+// void state_cb(const mavros_msgs::State::ConstPtr& msg){
+//     current_state = *msg;
+// }
 
 int main(int argc, char **argv){
     ros::init(argc, argv, "main");

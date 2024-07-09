@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<launch>
+    <!-- param -->
+    <param name="thrust_gain" type="int" value="100"/>
+
+    <node name="mpc_control_node" pkg="mpc_control" type="mpc_control_node" output="screen"/>
+
+	<node name="thrust_publish_node" pkg="thrust_publish" type="thrust_publish_node" output="screen"/>
+</launch>

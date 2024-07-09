@@ -1,4 +1,4 @@
-#include "mpc_ctl.h"
+#include "../include/mpc_ctl.h"
 #include "ros/publisher.h"
 #include <asm-generic/errno.h>
 #include <casadi/core/calculus.hpp>
@@ -56,7 +56,7 @@ MPC_CTL::MPC_CTL(){
 
     // Initial guess and bounds for the optimization variables
     x0 = {0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0}; // initial state
-    xs = {0.0, pi/5, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0}; // desire state
+    xs = {0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0}; // desire state
     X0 = SX::repmat(x0, 1, N+1);
     
     state_lower_bound = {-pi/2, -pi/2, -pi/2, -inf, -inf, -inf, -inf, -inf, -inf, -inf, -inf, -inf};
