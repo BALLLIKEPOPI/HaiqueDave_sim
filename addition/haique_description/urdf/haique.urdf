@@ -1,0 +1,577 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com) 
+     Commit Version: 1.6.0-4-g7f85cfe  Build Version: 1.6.7995.38578
+     For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
+<robot
+  name="haique">
+  <link
+    name="base_link">
+    <inertial>
+      <origin
+        xyz="-0.00057507 -0.027168 -0.0053659"
+        rpy="0 0 0" />
+      <mass
+        value="2.7603" />
+      <inertia
+        ixx="0.0043247"
+        ixy="-2.278E-08"
+        ixz="5.3815E-08"
+        iyy="0.0056188"
+        iyz="2.3522E-05"
+        izz="0.0023189" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://haique/meshes/base_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://haique/meshes/base_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link
+    name="motor1_link">
+    <inertial>
+      <origin
+        xyz="0.000137933156118708 -0.00199588798465143 -0.00555364636938857"
+        rpy="0 0 0" />
+      <mass
+        value="0.00332650843015062" />
+      <inertia
+        ixx="9.64716470615058E-06"
+        ixy="1.34243840608534E-07"
+        ixz="1.88187090846337E-09"
+        iyy="6.36207126503889E-08"
+        iyz="1.92723449264156E-08"
+        izz="9.69661758640519E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://haique/meshes/motor1_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://haique/meshes/motor1_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="motor1_joint"
+    type="continuous">
+    <origin
+      xyz="-0.00013907 0.3405 0.041905"
+      rpy="3.1383 -3.0382E-05 1.5616" />
+    <parent
+      link="base_link" />
+    <child
+      link="motor1_link" />
+    <axis
+      xyz="0 0 1" />
+  </joint>
+  <link
+    name="motor5_link">
+    <inertial>
+      <origin
+        xyz="0.000138050463896755 -0.00202284678201135 -0.00555356343740102"
+        rpy="0 0 0" />
+      <mass
+        value="0.00332749372070091" />
+      <inertia
+        ixx="9.65612654233441E-06"
+        ixy="1.34318530802872E-07"
+        ixz="1.88149089735165E-09"
+        iyy="6.36210456781181E-08"
+        iyz="1.92825550995235E-08"
+        izz="9.70558039925214E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://haique/meshes/motor5_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://haique/meshes/motor5_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="motor5_joint"
+    type="continuous">
+    <origin
+      xyz="0.00013907 0.3405 -0.041905"
+      rpy="0.0032704 -0.00056445 -1.3999" />
+    <parent
+      link="base_link" />
+    <child
+      link="motor5_link" />
+    <axis
+      xyz="0 0 -1" />
+  </joint>
+  <link
+    name="motor3_link">
+    <inertial>
+      <origin
+        xyz="0.000137758780639929 -0.00200787064401782 -0.00555363919092206"
+        rpy="0 0 0" />
+      <mass
+        value="0.00332690442047705" />
+      <inertia
+        ixx="9.65102657387172E-06"
+        ixy="1.34181871855322E-07"
+        ixz="1.88111710933126E-09"
+        iyy="6.36197740376516E-08"
+        iyz="1.93099809906568E-08"
+        izz="9.7004793459358E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://haique/meshes/motor3_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://haique/meshes/motor3_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="motor3_joint"
+    type="continuous">
+    <origin
+      xyz="0 -0.3005 0.041905"
+      rpy="3.1416 0 1.5735" />
+    <parent
+      link="base_link" />
+    <child
+      link="motor3_link" />
+    <axis
+      xyz="0 0 -1" />
+  </joint>
+  <link
+    name="motor7_link">
+    <inertial>
+      <origin
+        xyz="0.000137881158839365 -0.00199557066987061 -0.0055537184757287"
+        rpy="0 0 0" />
+      <mass
+        value="0.00332652239974496" />
+      <inertia
+        ixx="9.64699792428429E-06"
+        ixy="1.34254299763927E-07"
+        ixz="1.88221578311511E-09"
+        iyy="6.36192799407753E-08"
+        iyz="1.92742675923023E-08"
+        izz="9.69644893154629E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://haique/meshes/motor7_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://haique/meshes/motor7_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="motor7_joint"
+    type="continuous">
+    <origin
+      xyz="0 -0.3005 -0.041905"
+      rpy="0 0 0.47674" />
+    <parent
+      link="base_link" />
+    <child
+      link="motor7_link" />
+    <axis
+      xyz="0 0 1" />
+  </joint>
+  <link
+    name="left_arm_link">
+    <inertial>
+      <origin
+        xyz="-2.77554457153216E-15 -3.22927749081516E-16 0.222511915631139"
+        rpy="0 0 0" />
+      <mass
+        value="0.461552637996899" />
+      <inertia
+        ixx="0.000198480125651565"
+        ixy="5.81805755645298E-20"
+        ixz="5.15641624419298E-18"
+        iyy="0.000205362111118802"
+        iyz="1.97167706843225E-19"
+        izz="6.0777731091829E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://haique/meshes/left_arm_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.898039215686275 0.917647058823529 0.929411764705882 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://haique/meshes/left_arm_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="left_arm_joint"
+    type="continuous">
+    <origin
+      xyz="-0.08 0 0"
+      rpy="-1.5708 -0.0032018 1.5708" />
+    <parent
+      link="base_link" />
+    <child
+      link="left_arm_link" />
+    <axis
+      xyz="0 0 1" />
+  </joint>
+  <link
+    name="motor2_link">
+    <inertial>
+      <origin
+        xyz="0.000138012834348555 -0.00202144640415509 -0.00637021510190526"
+        rpy="0 0 0" />
+      <mass
+        value="0.00332744249354993" />
+      <inertia
+        ixx="9.65556712267752E-06"
+        ixy="1.34306028758258E-07"
+        ixz="1.88351713898837E-09"
+        iyy="6.36250138826516E-08"
+        iyz="1.9297061839712E-08"
+        izz="9.70502289180278E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://haique/meshes/motor2_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://haique/meshes/motor2_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="motor2_joint"
+    type="continuous">
+    <origin
+      xyz="0 -0.0410880861364211 0.2285"
+      rpy="1.57079632679489 -1.35380799467834 3.14159265358979" />
+    <parent
+      link="left_arm_link" />
+    <child
+      link="motor2_link" />
+    <axis
+      xyz="0 0 -1" />
+  </joint>
+  <link
+    name="motor6_link">
+    <inertial>
+      <origin
+        xyz="0.000138168477433032 -0.00201971649468333 -0.00637481020861862"
+        rpy="0 0 0" />
+      <mass
+        value="0.00332733433636963" />
+      <inertia
+        ixx="9.65508132821061E-06"
+        ixy="1.34319655461033E-07"
+        ixz="1.88280563423913E-09"
+        iyy="6.36251784720147E-08"
+        iyz="1.92913584909219E-08"
+        izz="9.70453804178406E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://haique/meshes/motor6_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://haique/meshes/motor6_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="motor6_joint"
+    type="continuous">
+    <origin
+      xyz="0 0.0410835452472489 0.2285"
+      rpy="1.5707963267949 1.54826860845863 0" />
+    <parent
+      link="left_arm_link" />
+    <child
+      link="motor6_link" />
+    <axis
+      xyz="0 0 1" />
+  </joint>
+  <link
+    name="right_arm_link">
+    <inertial>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <mass
+        value="0" />
+      <inertia
+        ixx="0"
+        ixy="0"
+        ixz="0"
+        iyy="0"
+        iyz="0"
+        izz="0" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://haique/meshes/right_arm_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://haique/meshes/right_arm_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="right_arm_joint"
+    type="continuous">
+    <origin
+      xyz="0.08 0 0"
+      rpy="1.55502627095107 0 -3.14159265358979" />
+    <parent
+      link="base_link" />
+    <child
+      link="right_arm_link" />
+    <axis
+      xyz="1 0 0" />
+  </joint>
+  <link
+    name="motor4_link">
+    <inertial>
+      <origin
+        xyz="0.000137455675368825 -0.00201413458090437 -0.00958384585417896"
+        rpy="0 0 0" />
+      <mass
+        value="0.0033271863809251" />
+      <inertia
+        ixx="9.65320294095892E-06"
+        ixy="1.34115958409867E-07"
+        ixz="1.88234839867487E-09"
+        iyy="6.3621302282886E-08"
+        iyz="1.93480989170912E-08"
+        izz="9.70265569927477E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://haique/meshes/motor4_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://haique/meshes/motor4_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="motor4_joint"
+    type="continuous">
+    <origin
+      xyz="-0.2285 0.0378743108872477 0"
+      rpy="-1.5707963267949 0.197910082061046 3.14159265358979" />
+    <parent
+      link="right_arm_link" />
+    <child
+      link="motor4_link" />
+    <axis
+      xyz="0 0 1" />
+  </joint>
+  <link
+    name="motor8_link">
+    <inertial>
+      <origin
+        xyz="0.000137481923374538 -0.00201461078566299 -0.00960506347475162"
+        rpy="0 0 0" />
+      <mass
+        value="0.00332719870444843" />
+      <inertia
+        ixx="9.65335571925423E-06"
+        ixy="1.34121338788207E-07"
+        ixz="1.88224561448551E-09"
+        iyy="6.36213376501281E-08"
+        iyz="1.93457423096784E-08"
+        izz="9.70280861980695E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://haique/meshes/motor8_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://haique/meshes/motor8_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="motor8_joint"
+    type="continuous">
+    <origin
+      xyz="-0.2285 -0.0378530972707727 0"
+      rpy="1.5707963267949 -0.120996109613162 3.14159265358979" />
+    <parent
+      link="right_arm_link" />
+    <child
+      link="motor8_link" />
+    <axis
+      xyz="0 0 -1" />
+  </joint>
+</robot>

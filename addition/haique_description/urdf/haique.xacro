@@ -1,0 +1,237 @@
+<?xml version="1.0"?>
+
+<robot name="haique" xmlns:xacro="http://www.ros.org/wiki/xacro" >
+    <xacro:arg name="debug" default="0"/>
+    <xacro:arg name="namespace" default="haique"/>
+
+    <!-- "Dummy" base link to eliminate root link inertia warning --> 
+    <link name="$(arg namespace)/base_link"/>
+
+    <link name="$(arg namespace)/haique_link">
+    <!-- Mass and inertia from the Oceaneering eNovus technical specifications:
+         https://www.oceaneering.com/datasheets/ROV-eNovus.pdf -->
+        <inertial>
+            <origin xyz="-0.00057507 -0.027168 -0.0053659" rpy="0 0 0"/>
+            <mass value="2.7603"/>
+            <inertia
+                ixx="0.0043247"
+                ixy="-2.278E-08"
+                ixz="5.3815E-08"
+                iyy="0.0056188"
+                iyz="2.3522E-05"
+                izz="0.0023189"/>
+        </inertial>
+        <visual>
+            <origin xyz="0 0 0" rpy="0 0 0"/>
+            <geometry>
+                <mesh filename="package://haique_description/meshes/base_link.STL" scale="1 1 1"/>
+            </geometry>
+            <material
+                name="">
+                <color
+                rgba="1 1 1 1" />
+            </material>
+        </visual>
+        <collision>
+            <origin xyz="0 0 0" rpy="0 0 0"/>
+            <geometry>
+                <mesh filename="package://haique_description/meshes/base_link.STL" scale="1 1 1"/>
+            </geometry>
+        </collision>
+    </link>
+    <!-- Attach haique_link to the dummy base link -->
+    <joint name="$(arg namespace)/haique_base_joint" type="fixed">
+        <origin xyz="0 0 0" rpy="0 0 0"/>  <!-- X-fwd, Y-lft, Z-up (ick!) -->
+        <parent link="$(arg namespace)/base_link"/>
+        <child link="$(arg namespace)/haique_link"/>
+    </joint>
+    <link name="$(arg namespace)/zuo_link">
+        <inertial>
+            <origin
+                xyz="-2.77554457153216E-15 -3.22927749081516E-16 0.222511915631139"
+                rpy="0 0 0" />
+            <mass value="0.461552637996899" />
+            <inertia
+                ixx="0.000198480125651565"
+                ixy="5.81805755645298E-20"
+                ixz="5.15641624419298E-18"
+                iyy="0.000205362111118802"
+                iyz="1.97167706843225E-19"
+                izz="6.0777731091829E-05" />
+        </inertial>
+        <visual>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <mesh filename="package://haique_description/meshes/zuo_Link.STL" scale="1 1 1"/>
+            </geometry>
+        </visual>
+        <collision>
+            <origin
+                xyz="0 0 0"
+                rpy="0 0 0" />
+            <geometry>
+                <mesh filename="package://haique_description/meshes/zuo_Link.STL" scale="1 1 1"/>
+            </geometry>
+        </collision>
+    </link>
+    <joint name="$(arg namespace)/zuoqingzhuan_joint" type="continuous">
+        <origin xyz="-0.08 0 0" rpy="-3.1416 -0.15 1.5708" />
+        <parent link="$(arg namespace)/haique_link" />
+        <child link="$(arg namespace)/zuo_link" />
+        <axis xyz="0 1 0" />
+    </joint>
+    <link name="$(arg namespace)/you_link">
+        <inertial>
+            <origin
+                xyz="0 0 0" rpy="0 0 0" />
+            <mass value="0.461552637996899" />
+            <inertia
+                ixx="0"
+                ixy="0"
+                ixz="0"
+                iyy="0"
+                iyz="0"
+                izz="0" />
+        </inertial>
+        <visual>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <mesh filename="package://haique_description/meshes/you_Link.STL" scale="1 1 1"/>"
+            </geometry>
+        </visual>
+        <collision>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <mesh filename="package://haique_description/meshes/you_Link.STL" scale="1 1 1"/>"
+            </geometry>
+        </collision>
+    </link>
+    <joint name="$(arg namespace)/youqingzhuan_joint" type="continuous">
+        <origin xyz="0.08 0 0" rpy="0 0.55 1.573" />
+        <axis xyz="0 1 0" />
+        <parent link="$(arg namespace)/haique_link" />
+        <child link="$(arg namespace)/you_link" />
+    </joint>
+     <!-- Default joint state publisher -->
+    <gazebo>
+    <plugin name="uuv_joint_state_publisher" filename="libuuv_joint_state_publisher.so">
+        <robotNamespace>$(arg namespace)</robotNamespace>
+        <updateRate>50</updateRate>
+    </plugin>
+    </gazebo>
+
+    <gazebo>
+        <plugin name="gazebo_ros_control" filename="libgazebo_ros_control.so">
+            <robotNamespace>/$(arg namespace)</robotNamespace>
+            <robotParam>/$(arg namespace)</robotParam>
+        </plugin>
+    </gazebo>
+
+     <!-- Define thrusters for propulsion -->
+    <xacro:property name="qianshang_mesh_file" value="file://$(find uuv_descriptions)/meshes/qianshang_Link.STL"/>
+    <xacro:property name="qianxia_mesh_file" value="file://$(find uuv_descriptions)/meshes/qianxia_Link.STL"/>
+    <!-- Common values, colors, converstion, standard shapes/inertia etc.
+        Dependency for the thruster_snippets.xacro-->
+    <xacro:include filename="$(find uuv_descriptions)/urdf/common.urdf.xacro"/>
+    <!-- Various thruster models -->
+    <xacro:include filename="$(find uuv_gazebo_ros_plugins)/urdf/thruster_snippets_haique.xacro"/>
+
+    <xacro:macro name="thruster_macro1"
+   	           params="thruster_id 
+                        *origin
+                        *axis
+                        parent_link">
+        <xacro:thruster_module_first_order_basic_fcn_macro
+            namespace="$(arg namespace)"
+            thruster_id="${thruster_id}"
+            parent_link="${parent_link}"
+            mesh_filename="${qianshang_mesh_file}"
+            dyn_time_constant="0.05"
+            rotor_constant="0.00031">  <!-- This is a guess for now (same as Smilidon) -->
+        <xacro:insert_block name="origin"/>
+        <xacro:insert_block name="axis"/>
+        </xacro:thruster_module_first_order_basic_fcn_macro>
+    </xacro:macro>
+
+    <xacro:macro name="thruster_macro2"
+   	           params="thruster_id 
+                        *origin
+                        *axis
+                        parent_link">
+        <xacro:thruster_module_first_order_basic_fcn_macro
+            namespace="$(arg namespace)"
+            thruster_id="${thruster_id}"
+            parent_link="${parent_link}"
+            mesh_filename="${qianxia_mesh_file}"
+            dyn_time_constant="0.05"
+            rotor_constant="0.00031">  <!-- This is a guess for now (same as Smilidon) -->
+        <xacro:insert_block name="origin"/>
+        <xacro:insert_block name="axis"/>
+        </xacro:thruster_module_first_order_basic_fcn_macro>
+    </xacro:macro>
+
+    <!-- qianshang -->
+    <xacro:thruster_macro1 thruster_id="0" parent_link="haique_link">
+        <origin
+            xyz="-0.00013907 0.3405 0.04691"
+            rpy="3.1383 0 1.5616" />
+        <axis
+            xyz="0 0 1" />
+    </xacro:thruster_macro1>
+    <!-- zuoshang -->
+    <xacro:thruster_macro2 thruster_id="1" parent_link="zuo_link">
+        <origin
+            xyz="0.006 -0.2285 -0.037 "
+            rpy="0 -0.21 0" />
+        <axis
+            xyz="0 0 -1" />
+    </xacro:thruster_macro2>
+    <!-- houshang -->
+    <xacro:thruster_macro1 thruster_id="2" parent_link="haique_link">
+        <origin
+            xyz="0 -0.3005 0.04691"
+            rpy="3.1416 0 1.5735" />
+        <axis
+            xyz="0 0 -1" />
+    </xacro:thruster_macro1>
+    <!-- youshang -->
+    <xacro:thruster_macro2 thruster_id="3" parent_link="you_link">
+        <origin
+            xyz="0.02087 -0.2285 -0.03"
+            rpy="0 -0.45 0" />
+        <axis
+            xyz="0 0 1" />
+    </xacro:thruster_macro2>
+    <!-- qianxia -->
+    <xacro:thruster_macro2 thruster_id="4" parent_link="haique_link">
+        <origin
+            xyz="0 0.3405 -0.0369"
+            rpy="0.00327 0 -1.3999" />
+        <axis
+            xyz="0 0 -1" />
+    </xacro:thruster_macro2>
+    <!-- zuoxia -->
+    <xacro:thruster_macro1 thruster_id="5" parent_link="zuo_link">
+        <origin
+            xyz="-0.005 -0.2285 0.04648 "
+            rpy="0 -0.217 0" />
+        <axis
+            xyz="0 0 1" />
+    </xacro:thruster_macro1>
+    <!-- houxia -->
+    <xacro:thruster_macro2 thruster_id="6" parent_link="haique_link">
+        <origin
+            xyz="0 -0.3005 -0.0369"
+            rpy="0 0 0.47674" />
+        <axis
+            xyz="0 0 1" />
+    </xacro:thruster_macro2>
+    <!-- youxia -->
+    <xacro:thruster_macro1 thruster_id="7" parent_link="you_link">
+        <origin
+            xyz="-0.02387 -0.2285 0.04"
+            rpy="0 -0.45 0" />
+        <axis
+            xyz="0 0 -1" />
+    </xacro:thruster_macro1>
+</robot>
