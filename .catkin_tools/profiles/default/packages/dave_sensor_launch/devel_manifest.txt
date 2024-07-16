@@ -1,2 +1,0 @@
-Dave_Haique/examples/dave_sensor_launch
-/home/popi/Haique_Sim/devel/.private/dave_sensor_launch/cmake.lock /home/popi/Haique_Sim/devel/./cmake.lock

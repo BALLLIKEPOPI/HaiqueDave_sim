@@ -1,5 +1,0 @@
-Dave_Haique/urdf/manipulators/predator_control
-/home/popi/Haique_Sim/devel/.private/predator_control/cmake.lock /home/popi/Haique_Sim/devel/./cmake.lock
-/home/popi/Haique_Sim/devel/.private/predator_control/lib/pkgconfig/predator_control.pc /home/popi/Haique_Sim/devel/lib/pkgconfig/predator_control.pc
-/home/popi/Haique_Sim/devel/.private/predator_control/share/predator_control/cmake/predator_controlConfig-version.cmake /home/popi/Haique_Sim/devel/share/predator_control/cmake/predator_controlConfig-version.cmake
-/home/popi/Haique_Sim/devel/.private/predator_control/share/predator_control/cmake/predator_controlConfig.cmake /home/popi/Haique_Sim/devel/share/predator_control/cmake/predator_controlConfig.cmake

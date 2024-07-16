@@ -1,5 +1,0 @@
-Dave_Haique/urdf/sensors/teledyne_explorer4000_dsl_description
-/home/popi/Haique_Sim/devel/.private/teledyne_explorer4000_dsl_description/cmake.lock /home/popi/Haique_Sim/devel/./cmake.lock
-/home/popi/Haique_Sim/devel/.private/teledyne_explorer4000_dsl_description/lib/pkgconfig/teledyne_explorer4000_dsl_description.pc /home/popi/Haique_Sim/devel/lib/pkgconfig/teledyne_explorer4000_dsl_description.pc
-/home/popi/Haique_Sim/devel/.private/teledyne_explorer4000_dsl_description/share/teledyne_explorer4000_dsl_description/cmake/teledyne_explorer4000_dsl_descriptionConfig.cmake /home/popi/Haique_Sim/devel/share/teledyne_explorer4000_dsl_description/cmake/teledyne_explorer4000_dsl_descriptionConfig.cmake
-/home/popi/Haique_Sim/devel/.private/teledyne_explorer4000_dsl_description/share/teledyne_explorer4000_dsl_description/cmake/teledyne_explorer4000_dsl_descriptionConfig-version.cmake /home/popi/Haique_Sim/devel/share/teledyne_explorer4000_dsl_description/cmake/teledyne_explorer4000_dsl_descriptionConfig-version.cmake

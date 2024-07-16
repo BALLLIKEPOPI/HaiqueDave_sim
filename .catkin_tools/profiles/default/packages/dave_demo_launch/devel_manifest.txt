@@ -1,5 +1,0 @@
-Dave_Haique/examples/dave_demo_launch
-/home/popi/Haique_Sim/devel/.private/dave_demo_launch/cmake.lock /home/popi/Haique_Sim/devel/./cmake.lock
-/home/popi/Haique_Sim/devel/.private/dave_demo_launch/lib/pkgconfig/dave_demo_launch.pc /home/popi/Haique_Sim/devel/lib/pkgconfig/dave_demo_launch.pc
-/home/popi/Haique_Sim/devel/.private/dave_demo_launch/share/dave_demo_launch/cmake/dave_demo_launchConfig.cmake /home/popi/Haique_Sim/devel/share/dave_demo_launch/cmake/dave_demo_launchConfig.cmake
-/home/popi/Haique_Sim/devel/.private/dave_demo_launch/share/dave_demo_launch/cmake/dave_demo_launchConfig-version.cmake /home/popi/Haique_Sim/devel/share/dave_demo_launch/cmake/dave_demo_launchConfig-version.cmake

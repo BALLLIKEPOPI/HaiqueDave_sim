@@ -1,5 +1,0 @@
-Dave_Haique/urdf/sensors/teledyne_whn_uuvsim_description
-/home/popi/Haique_Sim/devel/.private/teledyne_whn_uuvsim_description/cmake.lock /home/popi/Haique_Sim/devel/./cmake.lock
-/home/popi/Haique_Sim/devel/.private/teledyne_whn_uuvsim_description/lib/pkgconfig/teledyne_whn_uuvsim_description.pc /home/popi/Haique_Sim/devel/lib/pkgconfig/teledyne_whn_uuvsim_description.pc
-/home/popi/Haique_Sim/devel/.private/teledyne_whn_uuvsim_description/share/teledyne_whn_uuvsim_description/cmake/teledyne_whn_uuvsim_descriptionConfig.cmake /home/popi/Haique_Sim/devel/share/teledyne_whn_uuvsim_description/cmake/teledyne_whn_uuvsim_descriptionConfig.cmake
-/home/popi/Haique_Sim/devel/.private/teledyne_whn_uuvsim_description/share/teledyne_whn_uuvsim_description/cmake/teledyne_whn_uuvsim_descriptionConfig-version.cmake /home/popi/Haique_Sim/devel/share/teledyne_whn_uuvsim_description/cmake/teledyne_whn_uuvsim_descriptionConfig-version.cmake

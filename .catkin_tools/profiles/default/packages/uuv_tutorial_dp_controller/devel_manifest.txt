@@ -1,7 +1,0 @@
-uuv_simulator/uuv_tutorials/uuv_tutorial_dp_controller
-/home/popi/Haique_Sim/devel/.private/uuv_tutorial_dp_controller/cmake.lock /home/popi/Haique_Sim/devel/./cmake.lock
-/home/popi/Haique_Sim/devel/.private/uuv_tutorial_dp_controller/lib/uuv_tutorial_dp_controller/tutorial_dp_controller.py /home/popi/Haique_Sim/devel/lib/uuv_tutorial_dp_controller/tutorial_dp_controller.py
-/home/popi/Haique_Sim/devel/.private/uuv_tutorial_dp_controller/lib/uuv_tutorial_dp_controller/cmake.lock /home/popi/Haique_Sim/devel/lib/uuv_tutorial_dp_controller/cmake.lock
-/home/popi/Haique_Sim/devel/.private/uuv_tutorial_dp_controller/lib/pkgconfig/uuv_tutorial_dp_controller.pc /home/popi/Haique_Sim/devel/lib/pkgconfig/uuv_tutorial_dp_controller.pc
-/home/popi/Haique_Sim/devel/.private/uuv_tutorial_dp_controller/share/uuv_tutorial_dp_controller/cmake/uuv_tutorial_dp_controllerConfig.cmake /home/popi/Haique_Sim/devel/share/uuv_tutorial_dp_controller/cmake/uuv_tutorial_dp_controllerConfig.cmake
-/home/popi/Haique_Sim/devel/.private/uuv_tutorial_dp_controller/share/uuv_tutorial_dp_controller/cmake/uuv_tutorial_dp_controllerConfig-version.cmake /home/popi/Haique_Sim/devel/share/uuv_tutorial_dp_controller/cmake/uuv_tutorial_dp_controllerConfig-version.cmake

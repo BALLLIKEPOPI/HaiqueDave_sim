@@ -1,6 +1,0 @@
-thrustPublish
-/home/popi/Haique_Sim/devel/.private/thrust_publish/cmake.lock /home/popi/Haique_Sim/devel/./cmake.lock
-/home/popi/Haique_Sim/devel/.private/thrust_publish/lib/thrust_publish/thrust_publish_node /home/popi/Haique_Sim/devel/lib/thrust_publish/thrust_publish_node
-/home/popi/Haique_Sim/devel/.private/thrust_publish/lib/pkgconfig/thrust_publish.pc /home/popi/Haique_Sim/devel/lib/pkgconfig/thrust_publish.pc
-/home/popi/Haique_Sim/devel/.private/thrust_publish/share/thrust_publish/cmake/thrust_publishConfig-version.cmake /home/popi/Haique_Sim/devel/share/thrust_publish/cmake/thrust_publishConfig-version.cmake
-/home/popi/Haique_Sim/devel/.private/thrust_publish/share/thrust_publish/cmake/thrust_publishConfig.cmake /home/popi/Haique_Sim/devel/share/thrust_publish/cmake/thrust_publishConfig.cmake

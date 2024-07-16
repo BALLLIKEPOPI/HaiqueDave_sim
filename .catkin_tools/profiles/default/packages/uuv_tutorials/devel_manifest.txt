@@ -1,2 +1,0 @@
-uuv_simulator/uuv_tutorials/uuv_tutorials
-/home/popi/Haique_Sim/devel/.private/uuv_tutorials/cmake.lock /home/popi/Haique_Sim/devel/./cmake.lock

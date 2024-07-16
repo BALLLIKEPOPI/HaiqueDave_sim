@@ -1,5 +1,0 @@
-uuv_manipulators/oberon7/oberon7_gazebo
-/home/popi/Haique_Sim/devel/.private/oberon7_gazebo/cmake.lock /home/popi/Haique_Sim/devel/./cmake.lock
-/home/popi/Haique_Sim/devel/.private/oberon7_gazebo/lib/pkgconfig/oberon7_gazebo.pc /home/popi/Haique_Sim/devel/lib/pkgconfig/oberon7_gazebo.pc
-/home/popi/Haique_Sim/devel/.private/oberon7_gazebo/share/oberon7_gazebo/cmake/oberon7_gazeboConfig-version.cmake /home/popi/Haique_Sim/devel/share/oberon7_gazebo/cmake/oberon7_gazeboConfig-version.cmake
-/home/popi/Haique_Sim/devel/.private/oberon7_gazebo/share/oberon7_gazebo/cmake/oberon7_gazeboConfig.cmake /home/popi/Haique_Sim/devel/share/oberon7_gazebo/cmake/oberon7_gazeboConfig.cmake

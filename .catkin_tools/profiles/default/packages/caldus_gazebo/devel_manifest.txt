@@ -1,2 +1,0 @@
-Dave_Haique/legacy/robots/caldus_gazebo
-/home/popi/Haique_Sim/devel/.private/caldus_gazebo/cmake.lock /home/popi/Haique_Sim/devel/./cmake.lock

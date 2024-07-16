@@ -1,5 +1,0 @@
-uuv_manipulators/oberon4/oberon4_description
-/home/popi/Haique_Sim/devel/.private/oberon4_description/cmake.lock /home/popi/Haique_Sim/devel/./cmake.lock
-/home/popi/Haique_Sim/devel/.private/oberon4_description/lib/pkgconfig/oberon4_description.pc /home/popi/Haique_Sim/devel/lib/pkgconfig/oberon4_description.pc
-/home/popi/Haique_Sim/devel/.private/oberon4_description/share/oberon4_description/cmake/oberon4_descriptionConfig-version.cmake /home/popi/Haique_Sim/devel/share/oberon4_description/cmake/oberon4_descriptionConfig-version.cmake
-/home/popi/Haique_Sim/devel/.private/oberon4_description/share/oberon4_description/cmake/oberon4_descriptionConfig.cmake /home/popi/Haique_Sim/devel/share/oberon4_description/cmake/oberon4_descriptionConfig.cmake

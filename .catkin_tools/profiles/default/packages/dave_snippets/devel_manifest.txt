@@ -1,5 +1,0 @@
-Dave_Haique/urdf/dave_snippets
-/home/popi/Haique_Sim/devel/.private/dave_snippets/cmake.lock /home/popi/Haique_Sim/devel/./cmake.lock
-/home/popi/Haique_Sim/devel/.private/dave_snippets/lib/pkgconfig/dave_snippets.pc /home/popi/Haique_Sim/devel/lib/pkgconfig/dave_snippets.pc
-/home/popi/Haique_Sim/devel/.private/dave_snippets/share/dave_snippets/cmake/dave_snippetsConfig.cmake /home/popi/Haique_Sim/devel/share/dave_snippets/cmake/dave_snippetsConfig.cmake
-/home/popi/Haique_Sim/devel/.private/dave_snippets/share/dave_snippets/cmake/dave_snippetsConfig-version.cmake /home/popi/Haique_Sim/devel/share/dave_snippets/cmake/dave_snippetsConfig-version.cmake

@@ -1,5 +1,0 @@
-uuv_manipulators/uuv_manipulators_description
-/home/popi/Haique_Sim/devel/.private/uuv_manipulators_description/cmake.lock /home/popi/Haique_Sim/devel/./cmake.lock
-/home/popi/Haique_Sim/devel/.private/uuv_manipulators_description/lib/pkgconfig/uuv_manipulators_description.pc /home/popi/Haique_Sim/devel/lib/pkgconfig/uuv_manipulators_description.pc
-/home/popi/Haique_Sim/devel/.private/uuv_manipulators_description/share/uuv_manipulators_description/cmake/uuv_manipulators_descriptionConfig.cmake /home/popi/Haique_Sim/devel/share/uuv_manipulators_description/cmake/uuv_manipulators_descriptionConfig.cmake
-/home/popi/Haique_Sim/devel/.private/uuv_manipulators_description/share/uuv_manipulators_description/cmake/uuv_manipulators_descriptionConfig-version.cmake /home/popi/Haique_Sim/devel/share/uuv_manipulators_description/cmake/uuv_manipulators_descriptionConfig-version.cmake

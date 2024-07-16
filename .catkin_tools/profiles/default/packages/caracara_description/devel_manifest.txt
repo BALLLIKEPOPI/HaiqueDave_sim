@@ -1,2 +1,0 @@
-Dave_Haique/urdf/robots/caracara_description
-/home/popi/Haique_Sim/devel/.private/caracara_description/cmake.lock /home/popi/Haique_Sim/devel/./cmake.lock

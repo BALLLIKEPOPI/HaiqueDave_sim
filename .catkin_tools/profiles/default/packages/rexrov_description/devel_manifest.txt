@@ -1,5 +1,0 @@
-Dave_Haique/urdf/robots/rexrov_description
-/home/popi/Haique_Sim/devel/.private/rexrov_description/cmake.lock /home/popi/Haique_Sim/devel/./cmake.lock
-/home/popi/Haique_Sim/devel/.private/rexrov_description/lib/pkgconfig/rexrov_description.pc /home/popi/Haique_Sim/devel/lib/pkgconfig/rexrov_description.pc
-/home/popi/Haique_Sim/devel/.private/rexrov_description/share/rexrov_description/cmake/rexrov_descriptionConfig.cmake /home/popi/Haique_Sim/devel/share/rexrov_description/cmake/rexrov_descriptionConfig.cmake
-/home/popi/Haique_Sim/devel/.private/rexrov_description/share/rexrov_description/cmake/rexrov_descriptionConfig-version.cmake /home/popi/Haique_Sim/devel/share/rexrov_description/cmake/rexrov_descriptionConfig-version.cmake
