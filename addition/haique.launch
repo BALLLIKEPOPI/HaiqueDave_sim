@@ -26,7 +26,18 @@
 		<arg name="verbose" value="$(arg verbose)"/>
 	</include>
 
+	<param name="robot_description" command="cat $(find haique_description)/urdf/haique_trans.urdf"/>
+
     <include file="$(find haique_description)/launch/upload_haique.launch"/>
+
+	<!-- Load joint controller configurations from YAML file to parameter server -->
+	<rosparam file="$(find haique_description)/config/haique.yaml" command="load"/>
+	
+	<!-- load the controllers -->
+  	<node name="controller_spawner" pkg="controller_manager" type="spawner" respawn="false"
+    output="screen" ns="/haique" args="haique_joint_state_controller haique_joint1_position_controller haique_joint2_position_controller">
+		<remap from="robot_description" to="/$(arg namespace)/haique"/>
+    </node>
 
 	<include file="$(find dave_nodes)/launch/haique_thrusterop.launch">
     	<arg name="joy_id" value="$(arg joy_id)"/>
@@ -44,7 +55,7 @@
 	<node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher"  respawn="false">
       <remap from="robot_description" to="/$(arg namespace)/haique"/>
     </node>
-    
+
     <!-- <node name="joint_state_publisher" pkg="joint_state_publisher_gui" type="joint_state_publisher_gui"  respawn="false">
       <remap from="robot_description" to="/$(arg namespace)/haique"/>
     </node> -->

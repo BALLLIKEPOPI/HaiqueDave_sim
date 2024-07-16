@@ -45,6 +45,7 @@
         <parent link="$(arg namespace)/base_link"/>
         <child link="$(arg namespace)/haique_link"/>
     </joint>
+
     <link name="$(arg namespace)/zuo_link">
         <inertial>
             <origin
@@ -74,12 +75,25 @@
             </geometry>
         </collision>
     </link>
+
     <joint name="$(arg namespace)/zuoqingzhuan_joint" type="continuous">
         <origin xyz="-0.08 0 0" rpy="-3.1416 -0.15 1.5708" />
         <parent link="$(arg namespace)/haique_link" />
         <child link="$(arg namespace)/zuo_link" />
         <axis xyz="0 1 0" />
     </joint>
+    <!-- zuoqingzhuan_joint Transmission -->
+    <transmission name="$(arg namespace)/zuoqingzhuan_tran">
+        <type>transmission_interface/SimpleTransmission</type>
+        <joint name="$(arg namespace)/zuoqingzhuan_joint">
+            <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+        </joint>
+        <actuator name="$(arg namespace)/zuoqingzhuan_motor">
+            <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+            <mechanicalReduction>1</mechanicalReduction>
+        </actuator>
+    </transmission>
+
     <link name="$(arg namespace)/you_link">
         <inertial>
             <origin
@@ -112,18 +126,29 @@
         <parent link="$(arg namespace)/haique_link" />
         <child link="$(arg namespace)/you_link" />
     </joint>
+    <!-- youqingzhuan_joint Transmission -->
+    <transmission name="$(arg namespace)/youqingzhuan_tran">
+        <type>transmission_interface/SimpleTransmission</type>
+        <joint name="$(arg namespace)/youqingzhuan_joint">
+            <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+        </joint>
+        <actuator name="$(arg namespace)/youqingzhuan_motor">
+            <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+            <mechanicalReduction>1</mechanicalReduction>
+        </actuator>
+    </transmission>
      <!-- Default joint state publisher -->
     <gazebo>
-    <plugin name="uuv_joint_state_publisher" filename="libuuv_joint_state_publisher.so">
-        <robotNamespace>$(arg namespace)</robotNamespace>
-        <updateRate>50</updateRate>
-    </plugin>
+        <plugin name="uuv_joint_state_publisher" filename="libuuv_joint_state_publisher.so">
+            <robotNamespace>$(arg namespace)</robotNamespace>
+            <updateRate>50</updateRate>
+        </plugin>
     </gazebo>
 
     <gazebo>
         <plugin name="gazebo_ros_control" filename="libgazebo_ros_control.so">
             <robotNamespace>/$(arg namespace)</robotNamespace>
-            <robotParam>/$(arg namespace)</robotParam>
+            <robotParam>/$(arg namespace)/haique</robotParam>
         </plugin>
     </gazebo>
 
