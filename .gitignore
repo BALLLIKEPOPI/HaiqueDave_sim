@@ -40,7 +40,7 @@
 .vscode
 
 # catkin_tool
-.catkin_toll
+.catkin_tools
 
 build
 devel
