@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<launch>
+    <!-- param -->
+    <rosparam file="/home/popi/Haique_Sim/src/attitudectl/config/mpc.yaml" command="load"/>
+    <!-- <param name="thrust_gain" type="int" value="800"/>
+    <param name="xs" type="double" value="[0.35, 0.0, 0.0, 0.0, 0.0, 0.0]"/> -->
+
+    <node name="attitudectl_node" pkg="attitudectl" type="attitudectl_node" output="screen"/>
+
+	<node name="thrust_publish_node" pkg="thrust_publish" type="thrust_publish_node" output="screen"/>
+</launch>

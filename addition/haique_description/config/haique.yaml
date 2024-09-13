@@ -1,0 +1,15 @@
+haique:
+    # Publish all joint states -----------------------------------
+  haique_joint_state_controller:
+    type: joint_state_controller/JointStateController
+    publish_rate: 50  
+
+  # Position Controllers ---------------------------------------
+  haique_joint1_position_controller:
+    type: effort_controllers/JointPositionController
+    joint: haique/zuoqingzhuan_joint
+    pid: {p: 200.0, i: 0.01, d: 90.0}
+  haique_joint2_position_controller:
+    type: effort_controllers/JointPositionController
+    joint: haique/youqingzhuan_joint
+    pid: {p: 200.0, i: 0.01, d: 90.0}

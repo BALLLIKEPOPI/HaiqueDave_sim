@@ -73,9 +73,15 @@ void local_pose_cb(const gazebo_msgs::ModelStates::ConstPtr& msg){
     double siny_cosp = 2 * (w * z + x * y);
     double cosy_cosp = 1 - 2 * (y * y + z * z);
     yaw = atan2(siny_cosp, cosy_cosp);
+    cout << "roll: " << pitch << "  pitch: " << -roll << "  yaw: " << yaw << endl;
 
-    MPC_Ctl.updatex0(roll, pitch, yaw, w_x, w_y, w_z, 
+    // for sim
+    MPC_Ctl.updatex0(pitch, -roll, yaw, w_x, w_y, w_z, 
                         x_, y_, z_, v_x, v_y, v_z);
+
+    // for realfly
+    // MPC_Ctl.updatex0(roll, pitch, yaw, w_x, w_y, w_z, 
+    //                     x_, y_, z_, v_x, v_y, v_z);
 }
 
 //for realfly
@@ -94,7 +100,6 @@ int main(int argc, char **argv){
     //                                 "mavros/local_position/pose", 10, local_pose_cb);
     // for sim
     ros::Subscriber sub = nh.subscribe("/gazebo/model_states", 10, local_pose_cb);
-
     ros::Rate rate(50.0);
 
     // for realfly

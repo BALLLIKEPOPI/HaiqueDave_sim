@@ -4,6 +4,8 @@
 #include "casadi/casadi.hpp"
 #include "mpc_control/controlPub.h"
 #include "eigen3/Eigen/Eigen"
+#include <iostream>
+#include <ostream>
 #include <vector>
 #include <ros/ros.h>
 #include "ros/publisher.h"
@@ -22,31 +24,38 @@ class MPC_CTL{
         SX M5 = c*con(4)/k;     SX M6 = c*con(5)/k; 
         SX M7 = c*con(6)/k;     SX M8 = c*con(7)/k; 
 
-        SX Mx = (-M2+M6)*cos(con(9))+(-M4+M8)*cos(con(8))+
-                    l*((con(1)+con(5))*sin(con(9))-(con(3)+con(7))*sin(con(8)));
+        SX Mx = l*((con(1)+con(5))*sin(con(9))-(con(3)+con(7))*sin(con(8)));
         SX My = l*(-con(0)-con(4)+con(2)+con(6));
-        SX Mz = M1+M3-M2-M4+M6+M8-M5-M7+(-M2+M6)*sin(con(9))+(-M4+M8)*sin(con(8));
+        SX Mz = M1+M3-M5-M7+
+                    l*((con(1)+con(5))*cos(con(9))-(con(3)+con(7))*cos(con(8)));
 
         SX Tx = (con(1)+con(5))*cos(con(9))+(con(3)+con(7))*cos(con(8));
         SX Ty = 0;
         SX Tz = con(0)+con(2)+con(4)+con(6)+(con(1)+con(5))*sin(con(9))+
                     (con(3)+con(7))*sin(con(8));
+        // return SX::vertcat({state(3),
+        //                     state(4),
+        //                     state(5),
+        //                     (Mx - (I3-I2)*state(4)*state(5))/I1,
+        //                     (My - (I1-I3)*state(3)*state(5))/I2,
+        //                     (Mz - (I2-I1)*state(3)*state(4))/I3,
+        //                     state(9),
+        //                     state(10),
+        //                     state(11),
+        //                     1/m*(cos(state(1))*cos(state(2))*Tx+(cos(state(2))*sin(state(1))*cos(state(0))+sin(state(2))*sin(state(0)))*Tz),
+        //                     1/m*(cos(state(0))*sin(state(2))*Tx+(sin(state(2))*sin(state(1))*cos(state(0))-cos(state(2))*sin(state(0))*Tz)),
+        //                     1/m*(-sin(state(1))*Tx+cos(state(0))*cos(state(1))*Tz+(rou*V-m)*G)});
         return SX::vertcat({state(3),
                             state(4),
                             state(5),
-                            (Mx - (I3-I2)*state(4)*state(5))/I1,
-                            (My - (I1-I3)*state(3)*state(5))/I2,
-                            (Mz - (I2-I1)*state(3)*state(4))/I3,
-                            state(9),
-                            state(10),
-                            state(11),
-                            1/m*(cos(state(1))*cos(state(2))*Tx+(cos(state(2))*sin(state(1))*cos(state(0))+sin(state(2))*sin(state(0)))*Tz),
-                            1/m*(cos(state(0))*sin(state(2))*Tx+(sin(state(2))*sin(state(1))*cos(state(0))-cos(state(2))*sin(state(0))*Tz)),
-                            1/m*(-sin(state(1))*Tx+cos(state(0))*cos(state(1))*Tz+(rou*V-m)*G)});
+                            (Mx)/I1,
+                            (My)/I2,
+                            (Mz)/I3});
     }
 
     void init(ros::NodeHandle &nh){
         conPub = nh.advertise<mpc_control::controlPub>("/mpc_ctl", 10);
+        // nh.getParam("xs", xs); // desire state
     }
     void solve();
     void updatePara();
@@ -57,8 +66,8 @@ class MPC_CTL{
 
     private:
 
-    float h = 0.3; // step[s]
-    int N = 10; // prediction horizon
+    float h = 0.1; // step[s]
+    int N = 25; // prediction horizon
     float I1 = 0.103; float I2 = 0.104; float I3 = 0.161; 
     float m = 4.8; // kg
     float V = 0.00285; // m3
@@ -66,8 +75,8 @@ class MPC_CTL{
     float G = 9.8; // m/s2
     float l = 0.6; // m
     float c1 = 0.01; float c2 = 0.01; float c3 = 0.01;
-    float k = 0.0000005; // 推力系数
-    float c = 0.0000001; // 反扭系数
+    float k = 0.00031; // 推力系数
+    float c = 0.000015; // 反扭系数
 
     Slice all;
     // states
@@ -77,9 +86,11 @@ class MPC_CTL{
     SX x = SX::sym("x");            SX u = SX::sym("u");
     SX y = SX::sym("y");            SX v = SX::sym("v");
     SX z = SX::sym("z");            SX w = SX::sym("w");
-    SX state = DM::vertcat({phi, theta, psi, p, q, r, 
-                                    x, y, z, u, v, w});
-    int n_state = 12;
+    // SX state = DM::vertcat({phi, theta, psi, p, q, r, 
+    //                                 x, y, z, u, v, w});
+    SX state = DM::vertcat({phi, theta, psi, p, q, r});
+    // int n_state = 12;
+    int n_state = 6;
     
     // controls
     SX T1 = SX::sym("T1");          SX T4 = SX::sym("T4");
@@ -87,8 +98,10 @@ class MPC_CTL{
     SX T3 = SX::sym("T3");          SX T6 = SX::sym("T6");
     SX T7 = SX::sym("T7");          SX T8 = SX::sym("T8");
     SX alpha = SX::sym("alpha");    SX beta = SX::sym("beta");
+    // SX control = DM::vertcat({T1, T2, T3, T8, T5, T6, 
+    //                                 T7, T4, alpha, beta});  //  for sim
     SX control = DM::vertcat({T1, T2, T3, T4, T5, T6, 
-                                    T7, T8, alpha, beta});
+                                    T7, T8, alpha, beta});  //  for reafly
     int n_control = 10;
 
     // parameter
@@ -130,6 +143,10 @@ class MPC_CTL{
     vector<double> state_lower_bound;
     vector<double> con_upper_bound;
     vector<double> con_lower_bound;
+    vector<double> con_upper_bound_n;
+    vector<double> con_lower_bound_n;
+    vector<double> con_upper_bound_p;
+    vector<double> con_lower_bound_p;
     vector<double> lbx;
     vector<double> ubx;
     // Nonlinear bounds
